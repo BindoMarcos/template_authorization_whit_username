@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="layouts/base-layout::head"></head>
+  <body>
+    <div class="conteiner mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-3">
+          <div class="card card-body">
+            <span th:if="${session.user != null}"
+              >Welcome
+              <span font="italic" th:text="${session.user.name}"></span
+            ></span>
+
+            <form th:action="@{/logout}" method="post">
+              <button type="submit" class="btn btn-primary mt-3">Logout</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
